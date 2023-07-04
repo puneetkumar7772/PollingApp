@@ -4,6 +4,7 @@ import { UpdatepollComponent } from '../updatepoll/updatepoll.component';
 import { MatDialog } from '@angular/material/dialog';
 import { AddnewoptionComponent } from '../addnewoption/addnewoption.component';
 import { ToastrService } from 'ngx-toastr';
+import jwt_decode from 'jwt-decode';
 
 @Component({
   selector: 'app-listallpolls',
@@ -73,4 +74,21 @@ export class ListallpollsComponent implements OnInit {
     })
 
   }
+isadmin:boolean=false;
+  ngDoCheck():void{
+
+    const accessToken = localStorage.getItem('accessToken');
+    if (accessToken) {
+      const decodedToken: any = jwt_decode(accessToken);
+      const role = decodedToken.role;
+    
+      if (role === "admin") {
+        this.isadmin = true;
+      } else {
+        this.isadmin = false;
+      }
+    } else {
+      this.isadmin = false;
+    }
+    }
 }

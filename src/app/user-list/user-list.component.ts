@@ -5,6 +5,7 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-list',
@@ -26,7 +27,7 @@ export class UserListComponent implements OnInit {
     this.loadData();
   }
   
-  constructor(private callserviceService: CallserviceService) { }
+  constructor(private callserviceService: CallserviceService,private router:Router) { }
 
   loadData() {
 
@@ -36,6 +37,9 @@ export class UserListComponent implements OnInit {
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     })
+  }
+  home(){
+    this.router.navigate(['/home'])
   }
 
 }

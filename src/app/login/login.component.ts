@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import jwt_decode from 'jwt-decode';
+
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CallserviceService } from '../callservice.service';
 import { Router } from '@angular/router';
@@ -15,14 +17,6 @@ export class LoginComponent {
   constructor(private log: FormBuilder, private callserviceService: CallserviceService, private router: Router, private toastr: ToastrService) { }
 
   ngOnIt() {
-    const accessToken = localStorage.getItem('accessToken');
-    if (accessToken) {
-      const logindata = JSON.parse(accessToken);
-      this.router.navigate(['home'])
-      console.log(accessToken);
-    } else {
-      console.log("error")
-    }
 
   }
 
@@ -48,9 +42,24 @@ export class LoginComponent {
 
             // Save the access token in localStorage
             localStorage.setItem('accessToken', accessToken);
+            console.log(accessToken)
+            const accessTokenrole = localStorage.getItem('accessToken');
+            if (accessToken) {
+              const decodedToken: any = jwt_decode(accessToken);
+              console.log("decodedToken", decodedToken);
+
+              const role = decodedToken.role;
+              console.log("role", role);
+
+              this.router.navigate(['home']);
+            } else {
+              console.log("Token not found in localStorage");
+            }
+
             this.toastr.success("Login successfully");
             this.router.navigate(['home']);
-          } else {
+          } 
+          else {
             this.toastr.warning("Invalid user");
           }
         },
@@ -63,7 +72,7 @@ export class LoginComponent {
     } else {
       this.toastr.warning("all fields are required")
     }
-    this.loginForm.reset();
+    // this.loginForm.reset();
   }
 }
 

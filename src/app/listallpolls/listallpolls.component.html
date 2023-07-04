@@ -1,4 +1,5 @@
 <div [ngStyle]="{'background':'url(./assets/images/7.png)','background-size': 'cover'}">
+  <button class="btn btn1 btn2" style="float: left;" routerLink="/home">Home</button>
 
   <h1><u><i>List all polls</i></u></h1>
   <div class="container">
@@ -8,15 +9,15 @@
         <div class="first"><mat-radio-button class="radio" style="width: 50px;">{{ option.option }} </mat-radio-button>
           <div>
             <button class="btn btn1 btn-primary" (click)=" deleteOption(poll._id,option.option)"
-              type="submit">delete</button>
+              type="submit" *ngIf="isadmin">delete</button>
           </div>
         </div>
 
       </ul>
       <div class="but">
-        <button (click)=" updatePollTitleSet(poll._id,poll.title)" class="btn  btn-primary">Edit Title</button>
-        <button (click)=" deletePoll(poll._id)" class="btn  btn-primary">Delete POll</button>
-        <button (click)=" addoptions(poll._id)" class="btn  btn-primary">Add option</button>
+        <button *ngIf="isadmin"(click)=" updatePollTitleSet(poll._id,poll.title)" class="btn  btn-primary">Edit Title</button>
+        <button *ngIf="isadmin" (click)=" deletePoll(poll._id)" class="btn  btn-primary">Delete POll</button>
+        <button *ngIf="isadmin" (click)=" addoptions(poll._id)" class="btn  btn-primary">Add option</button>
       </div>
     </div>
   </div>
