@@ -57,7 +57,6 @@ export class SignupComponent {
     } else {
       this.toastr.error("Please fill in all the required fields");
     }
-    this.signupForm.reset();
   }
 
 

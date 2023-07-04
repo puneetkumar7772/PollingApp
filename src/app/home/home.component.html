@@ -1,16 +1,16 @@
 <div
-  [ngStyle]="{'background':'url(./assets/images/light1.jpg)','height':'100vh','background-repeat':'no-repeat','background-size':'cover'}">
-  <button class="btn btn1" (click)="logout()">Logout</button>
+  [ngStyle]="{'background':'url(./assets/images/light1.jpg)','height':'91vh','background-repeat':'no-repeat','background-size':'cover'}">
+  <button class="btn btn1" style="float: right;"  (click)="logout()">Logout</button>
   <div class="container">
     <div class="hed">
       <h1>Welcome To Polling</h1>
       <h2>Management system</h2>
     </div><br><br>
     <div class="btn2">
-      <button (click)="addNewPoll()">Add new poll</button>
-      <button routerLink="/userlist">User list</button>
-      <button routerLink="/allpolls">List All polls</button>
-      <button>Vote</button>
+      <button class="btn btn1"(click)="addNewPoll()" *ngIf="isadmin">Add new poll</button>
+      <button class="btn btn1" routerLink="/userlist" *ngIf="isadmin" >User list</button>
+      <button  class="btn btn1" routerLink="/allpolls">List All polls</button>
     </div>
   </div>
 </div>
+

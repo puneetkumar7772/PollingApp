@@ -42,8 +42,6 @@ export class UpdatepollComponent implements OnInit {
     })
     this.dialogRef.close();
     // this.cdr.detectChanges();
-
-
   }
   closepopup() {
     this.dialogRef.close();
