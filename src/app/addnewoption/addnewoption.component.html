@@ -1,0 +1,11 @@
+<button type="button" class="btn-close" (click)="closepopup()" style="margin-left: 450px;"></button>
+<h1>Add option</h1>
+<form class="form1" (ngSubmit)="addOption(data.id)" [formGroup]="addoptionForm">
+  <label>Option 1</label>
+  <mat-form-field class="main">
+    <input matInput #task name="text" formControlName="newoptionss" placeholder="Options">
+    <mat-error class="val" *ngIf="addoptionForm.get('newoptionss')?.hasError('required')">Option is
+      required.</mat-error>
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit">Add</button>
+</form>

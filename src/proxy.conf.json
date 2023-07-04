@@ -1,0 +1,8 @@
+{
+    "/api/*": {
+      "target": "https://secure-refuge-14993.herokuapp.com",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true
+    }
+  }

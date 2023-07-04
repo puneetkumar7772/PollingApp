@@ -1,0 +1,22 @@
+h1 {
+    text-align: center;
+    color: red;
+}
+
+.form1 {
+    width: 40%;
+    margin: 0px auto;
+    margin-top: 1vw;
+}
+
+label {
+    font-size: 20px;
+}
+
+.main {
+    display: block;
+}
+
+button {
+    padding-bottom: 2px;
+}

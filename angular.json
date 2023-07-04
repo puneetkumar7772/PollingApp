@@ -11,10 +11,13 @@
       "prefix": "app",
       "architect": {
         "build": {
+          
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+       
             "outputPath": "dist/polling-app",
             "index": "src/index.html",
+            
             "main": "src/main.ts",
             "polyfills": [
               "zone.js"
@@ -25,6 +28,8 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -72,6 +77,7 @@
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "PollingApp:build"
+            
           }
         },
         "test": {
@@ -87,6 +93,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -94,5 +101,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "36e21c0f-33ab-4e53-a25c-ff83f4400e6b"
   }
 }

@@ -1,0 +1,26 @@
+h1 {
+    text-align: center;
+    color: red;
+}
+
+.main1 {
+    margin: 0px auto;
+}
+
+.form1 {
+    width: 50%;
+    margin: 0px auto;
+    margin-top: 1vw;
+}
+
+label {
+    font-size: 20px;
+}
+
+.main {
+    display: block;
+}
+
+.val {
+    font-size: 15px;
+}

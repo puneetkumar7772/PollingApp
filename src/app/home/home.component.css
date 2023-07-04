@@ -1,0 +1,70 @@
+.container {
+  margin: auto;
+  width: 50%;
+  background-color: transparent;
+  word-wrap: break-word;
+}
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+  margin: auto;
+  margin-top: 40px;
+  padding-top: 10px;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 35px;
+  color: rgb(222, 41, 41);
+}
+
+.hed {
+
+  word-wrap: wrap;
+}
+
+button {
+  /* padding: 10px; */
+  display: inline-flex;
+  border: 2px solid #315cfd;
+  border-radius: 10px;
+  transition: all 0.3s;
+  cursor: pointer;
+  background: white;
+  font-size: 1.5em;
+  font-weight: 450;
+  font-family: 'Montserrat', sans-serif;
+  padding: auto;
+}
+
+button:hover {
+  background: #315cfd;
+  color: white;
+  font-size: 1.2em;
+}
+
+.btn2 {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 5px;
+}
+
+span {
+  font-size: 30px;
+  color: white;
+
+}
+
+span:hover {
+  color: red;
+}
+
+.example-spacer {
+  flex: 1 0 auto;
+
+}

@@ -1,0 +1,63 @@
+.container {
+    justify-content: center;
+    align-items: center;
+    /* width: 50%; */
+    padding-bottom: 5%;
+}
+
+.example-spacer {
+    flex: 1 0 auto;
+}
+
+span {
+    font-size: 30px;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    margin-left: 25px;
+    color: rgb(7, 3, 3);
+    font-size: 25px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 30px;
+    color: black;
+    padding-top: 2%;
+}
+
+.bind {
+    border: 2px solid black;
+    margin-top: 5%;
+    background-color: lightpink;
+}
+
+.first {
+    display: flex;
+    align-items: center;
+
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 350px;
+    color: black;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.but {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+align-items: center;
+    margin-top: 30px;
+    padding-bottom: 5%;
+
+}
+
+.btn1 {
+    margin-left: 100px;
+}

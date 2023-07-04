@@ -1,0 +1,23 @@
+<div [ngStyle]="{'background':'url(./assets/7.png)','background-size': 'cover'}">
+
+  <h1><u><i>List all polls</i></u></h1>
+  <div class="container">
+    <div class="bind" *ngFor="let poll of allpolls">
+      <h2>{{ poll.title }}</h2>
+      <ul *ngFor="let option of poll.options">
+        <div class="first"><mat-radio-button class="radio" style="width: 50px;">{{ option.option }} </mat-radio-button>
+          <div>
+            <button class="btn btn1 btn-primary" (click)=" deleteOption(poll._id,option.option)"
+              type="submit">delete</button>
+          </div>
+        </div>
+
+      </ul>
+      <div class="but">
+        <button (click)=" updatePollTitleSet(poll._id,poll.title)" class="btn  btn-primary">Edit Title</button>
+        <button (click)=" deletePoll(poll._id)" class="btn  btn-primary">Delete POll</button>
+        <button (click)=" addoptions(poll._id)" class="btn  btn-primary">Add option</button>
+      </div>
+    </div>
+  </div>
+</div>

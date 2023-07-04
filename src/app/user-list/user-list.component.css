@@ -1,0 +1,25 @@
+.cont {
+  padding-bottom: 20px;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 350px;
+  color: rgb(14, 28, 182);
+  text-align: center;
+}
+
+.page1 {
+  padding-left: 16%;
+  padding-right: 15%;
+
+}
+
+span {
+  font-size: 25px;
+  color: rgb(8, 8, 212);
+}
+
+.example-spacer {
+  flex: 1 0 auto;
+}

@@ -1,0 +1,37 @@
+.form1 {
+  width: 50%;
+  margin: auto;
+  padding-top: 2%;
+}
+
+div {
+  color: black;
+}
+
+h2 {
+  text-align: center;
+  font-size: 30px;
+
+}
+
+label {
+  font-size: 20px;
+}
+
+.main {
+  display: block;
+}
+
+.val {
+  font-size: 15px;
+  color: rgb(184, 13, 13);
+}
+
+.example-spacer {
+  flex: 1 0 auto;
+}
+
+span {
+  font-size: 30px;
+  color: black;
+}

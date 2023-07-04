@@ -1,0 +1,80 @@
+{
+  "signup": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "username": "mishra",
+      "role": "user",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "id": 3
+    },
+    {
+      "username": "sanjay",
+      "role": "user",
+      "password": "san123",
+      "confirmPassword": "san123",
+      "id": 4
+    },
+    {
+      "username": "puneet",
+      "role": "admin",
+      "password": "987654",
+      "confirmPassword": "987654",
+      "id": 5
+    },
+    {
+      "username": "shivam",
+      "role": "user",
+      "password": "shi123",
+      "confirmPassword": "shi123",
+      "id": 6
+    },
+    {
+      "username": "shivam",
+      "role": "user",
+      "password": "shi123",
+      "confirmPassword": "shi123",
+      "id": 7
+    },
+    {
+      "username": "mayank",
+      "role": "admin",
+      "password": "may123",
+      "confirmPassword": "may123",
+      "id": 8
+    },
+    {
+      "username": "jay",
+      "role": "user",
+      "password": "jay12",
+      "confirmPassword": "jay12",
+      "id": 9
+    },
+    {
+      "username": "ravi",
+      "role": "user",
+      "password": "ravi123",
+      "confirmPassword": "ravi123",
+      "id": 10
+    },
+    {
+      "username": "mishra",
+      "role": "user",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "id": 11
+    },
+    {
+      "username": "mishra",
+      "role": "admin",
+      "password": "1234567",
+      "confirmPassword": "1234567",
+      "id": 12
+    }
+  ]
+}
