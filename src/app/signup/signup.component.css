@@ -1,37 +1,40 @@
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
 .form1 {
-  width: 50%;
+  width: 100%;
+  max-width: 500px;
   margin: auto;
   padding-top: 2%;
 }
 
-div {
-  color: black;
+.main {
+  width: 100%;
 }
-
 h2 {
-  text-align: center;
   font-size: 30px;
-
+  text-align: center;
 }
 
 label {
-  font-size: 20px;
-}
-
-.main {
-  display: block;
+  font-size: 18px;
 }
 
 .val {
-  font-size: 15px;
-  color: rgb(184, 13, 13);
-}
-
-.example-spacer {
-  flex: 1 0 auto;
+  font-size: 14px;
 }
 
 span {
-  font-size: 30px;
-  color: black;
+  font-size: 20px;
 }
+@media (max-width: 768px){
+  span{
+      font-size: 12px;
+      display: block;
+      margin-top: 5px;
+      margin-bottom: 5px;
+  }
+  }

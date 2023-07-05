@@ -8,16 +8,11 @@
     flex: 1 0 auto;
 }
 
-span {
-    font-size: 30px;
-    color: white;
-}
-
 a {
     text-decoration: none;
     margin-left: 25px;
     color: rgb(7, 3, 3);
-    font-size: 25px;
+    font-size: 20px;
 }
 
 h2 {
@@ -30,21 +25,20 @@ h2 {
 .bind {
     border: 2px solid black;
     margin-top: 5%;
-    background-color: lightpink;
+    background-color: #b3e0ff;
 }
 
 .first {
     display: flex;
     align-items: center;
-
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 350px;
-    color: black;
+    color: rgb(34, 0, 255);
     text-align: center;
-    padding-top: 30px;
+    padding-top: 40px;
 }
 
 .but {
@@ -77,4 +71,26 @@ button:hover {
     background: #315cfd;
     color: white;
     font-size: 1.2em;
+}
+ul{
+    padding-left: 2rem;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 15px;
+    }
+
+    .btn1 {
+        margin-left: 60px;
+    }
+
+    .but {
+        gap: 10px;
+        width: 95%;
+
+    }
+    ul{
+        padding-left: 0.5rem;
+    }
 }

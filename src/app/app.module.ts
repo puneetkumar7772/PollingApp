@@ -13,7 +13,6 @@ import { MatTableModule } from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { UserListComponent } from './user-list/user-list.component';
 import { AddpollComponent } from './addpoll/addpoll.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatToolbarModule } from '@angular/material/toolbar';

@@ -1,7 +1,6 @@
 .form1 {
     width: 50%;
     margin: auto;
-
     padding-top: 3%;
 }
 h2 {
@@ -15,16 +14,11 @@ label {
     color: black;
 }
 
-span {
-    font-size: 18px;
-}
-
 .val {
     font-size: 18px;
     color: rgb(183, 7, 7);
     margin-top: 1%;
 }
-
 .main {
     display: block;
 }
@@ -34,7 +28,14 @@ span {
 }
 
 span {
-    font-size: 30px;
+    font-size: 20px;
     color: rgb(12, 10, 10);
-
+}
+@media (max-width: 600px){
+span{
+    font-size: 15px;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 }
