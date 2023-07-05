@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { AddpollComponent } from '../addpoll/addpoll.component';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import jwt_decode from 'jwt-decode';
-
+import { CallserviceService } from '../callservice.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +10,7 @@ import jwt_decode from 'jwt-decode';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  constructor(private dialog: MatDialog, private router: Router) { }
+  constructor(private dialog: MatDialog, private router: Router, private callserviceService: CallserviceService) { }
 
   isAdmin: boolean = false;
 
@@ -24,25 +23,18 @@ export class HomeComponent {
   }
 
   ngDoCheck(): void {
-    const accessToken = localStorage.getItem('accessToken');
-    if (accessToken) {
-      const decodedToken: any = jwt_decode(accessToken);
-      const role = decodedToken.role;
-      if (role === "admin") {
-        this.isAdmin = true;
-      } else {
-        this.isAdmin = false;
-      }
-    } else {
-      this.isAdmin = false;
-    }
+    console.log("456789", this.callserviceService.decodeAccessToken())
+    const role = this.callserviceService.decodeAccessToken();
+    this.isAdmin = role === 'admin';
+
   }
 
   logout() {
     localStorage.clear();
     this.router.navigate(['login'])
   }
-
 }
+
+
 
 

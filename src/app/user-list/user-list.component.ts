@@ -26,11 +26,10 @@ export class UserListComponent implements OnInit {
 
     this.loadData();
   }
-  
-  constructor(private callserviceService: CallserviceService,private router:Router) { }
+
+  constructor(private callserviceService: CallserviceService, private router: Router) { }
 
   loadData() {
-
     this.callserviceService.getUserList().subscribe(res => {
       this.userList = res.data;
       this.dataSource = new MatTableDataSource(this.userList);
@@ -38,7 +37,7 @@ export class UserListComponent implements OnInit {
       this.dataSource.sort = this.sort;
     })
   }
-  home(){
+  home() {
     this.router.navigate(['/home'])
   }
 

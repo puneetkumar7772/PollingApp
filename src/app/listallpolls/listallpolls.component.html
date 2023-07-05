@@ -1,21 +1,21 @@
-<div [ngStyle]="{'background':'url(./assets/images/7.png)','background-size': 'cover'}">
-  <button class="btn btn1 btn2" style="float: left;" routerLink="/home">Home</button>
-
-  <h1><u><i>List all polls</i></u></h1>
+<div style="background-color:#ffcccc;">
+  <button class="btn btn1 btn2" style="float: left;margin-left: 10px; background-color: red;"
+    routerLink="/home">Home</button>
   <div class="container">
+    <h1><u>List all polls</u></h1>
     <div class="bind" *ngFor="let poll of allpolls">
-      <h2>{{ poll.title }}</h2>
+      <h2 style="color: rgb(201, 46, 26);">{{ poll.title }}</h2>
       <ul *ngFor="let option of poll.options">
-        <div class="first"><mat-radio-button class="radio" style="width: 50px;">{{ option.option }} </mat-radio-button>
+        <div class="first"><mat-radio-button class="radio" style="width: 50px; ">{{ option.option }} </mat-radio-button>
           <div>
-            <button class="btn btn1 btn-primary" (click)=" deleteOption(poll._id,option.option)"
-              type="submit" *ngIf="isAdmin">delete</button>
+            <button class="btn btn1 btn-primary" (click)=" deleteOption(poll._id,option.option)" type="submit"
+              *ngIf="isAdmin">delete</button>
           </div>
         </div>
-
-      </ul>
+         </ul>
       <div class="but">
-        <button *ngIf="isAdmin"(click)=" updatePollTitleSet(poll._id,poll.title)" class="btn  btn-primary">Edit Title</button>
+        <button *ngIf="isAdmin" (click)=" updatePollTitleSet(poll._id,poll.title)" class="btn  btn-primary">Edit
+          Title</button>
         <button *ngIf="isAdmin" (click)=" deletePoll(poll._id)" class="btn  btn-primary">Delete POll</button>
         <button *ngIf="isAdmin" (click)=" addoptions(poll._id)" class="btn  btn-primary">Add option</button>
       </div>

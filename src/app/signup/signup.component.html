@@ -1,38 +1,40 @@
-<div class="sign"
-  [ngStyle]="{'background':'url(./assets/images/7.png)','background-repeat' : 'no-repeat','height':'91vh','background-size': 'cover'}">
-  <form class="form1" (ngSubmit)="submitForm()" [formGroup]="signupForm">
-    <div>
-      <h2>Sign Up</h2>
-    </div>
-    <label>Username</label>
-    <mat-form-field class="main">
-      <input matInput id="username" name="firstname" formControlName="username" placeholder="Username">
-      <mat-error class="val" *ngIf="signupForm.get('username')?.hasError('required')">Username is
-        required.</mat-error>
-    </mat-form-field><br>
-    <label>Role</label>
-    <mat-form-field class="main">
-      <mat-select id="role" formControlName="role" placeholder="Role">
-        <mat-option value="admin">Admin</mat-option>
-        <mat-option value="user">User</mat-option>
-      </mat-select>
-      <mat-error class="val" *ngIf="signupForm.get('role')?.hasError('required')">Role is required.</mat-error>
-    </mat-form-field><br>
-    <label>Password</label>
-    <mat-form-field class="main">
-      <input matInput id="password" type="password" formControlName="password" placeholder="Password">
-      <mat-error class="val" *ngIf="signupForm.get('password')?.hasError('required')">Password is
-        required.</mat-error>
-    </mat-form-field><br>
-    <label>Confirm password</label>
-    <mat-form-field class="main">
-      <input matInput id="confirmPassword" type="password" formControlName="confirmPassword"
-        placeholder="Confirm Password">
-      <mat-error class="val" *ngIf="signupForm.get('confirmPassword')?.hasError('required')">Same password is
-        required.</mat-error>
-    </mat-form-field><br>
-    <button mat-raised-button color="primary" type="submit">Sign Up</button>
-    <span style="margin-left: 10px; font-size: 20px;">Already Have Account?</span>
-    <button routerLink="/login" mat-raised-button color="primary" style="margin-left: 10px;">Sign in</button>
-  </form>
+<div class="container">
+  <div class="sign">
+    <form class="form1" (ngSubmit)="submitForm()" [formGroup]="signupForm">
+      <div>
+        <h2>User Sign Up</h2>
+      </div>
+      <label>Username</label>
+      <mat-form-field class="main">
+        <input matInput id="username" name="firstname" formControlName="username" placeholder="Username">
+        <mat-error class="val" *ngIf="signupForm.get('username')?.hasError('required')">Username is
+          required.</mat-error>
+      </mat-form-field><br>
+      <label>Role</label>
+      <mat-form-field class="main">
+        <mat-select id="role" formControlName="role" placeholder="Role">
+          <mat-option value="admin">Admin</mat-option>
+          <mat-option value="user">User</mat-option>
+        </mat-select>
+        <mat-error class="val" *ngIf="signupForm.get('role')?.hasError('required')">Role is required.</mat-error>
+      </mat-form-field><br>
+      <label>Password</label>
+      <mat-form-field class="main">
+        <input matInput id="password" type="password" formControlName="password" placeholder="Password">
+        <mat-error class="val" *ngIf="signupForm.get('password')?.hasError('required')">Password is
+          required.</mat-error>
+      </mat-form-field><br>
+      <label>Confirm password</label>
+      <mat-form-field class="main">
+        <input matInput id="confirmPassword" type="password" formControlName="confirmPassword"
+          placeholder="Confirm Password">
+        <mat-error class="val" *ngIf="signupForm.get('confirmPassword')?.hasError('required')">Same password is
+          required.</mat-error>
+      </mat-form-field><br>
+      <button mat-raised-button color="primary" type="submit">Sign Up</button>
+      <span style="margin-left: 10px;">Already Have Account?</span>
+      <button routerLink="/login" mat-raised-button color="danger"
+        style="margin-left: 10px;color: red; background-color: white;">Sign in</button>
+    </form>
+  </div>
 </div>

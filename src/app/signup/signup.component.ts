@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
 import { CallserviceService } from '../callservice.service';
 import { ToastrService } from 'ngx-toastr';
 
@@ -38,8 +36,6 @@ export class SignupComponent {
               console.log(data);
               if (data.error === 0) {
                 this.toastr.success("Registration successful");
-
-                localStorage.setItem("name", JSON.stringify("signuForm.value"))
                 this.router.navigate(['login']);
               } else {
                 this.toastr.error("Account Already Exists!");

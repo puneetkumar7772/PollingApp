@@ -4,7 +4,6 @@ import { UpdatepollComponent } from '../updatepoll/updatepoll.component';
 import { MatDialog } from '@angular/material/dialog';
 import { AddnewoptionComponent } from '../addnewoption/addnewoption.component';
 import { ToastrService } from 'ngx-toastr';
-import jwt_decode from 'jwt-decode';
 
 @Component({
   selector: 'app-listallpolls',
@@ -14,7 +13,6 @@ import jwt_decode from 'jwt-decode';
 export class ListallpollsComponent implements OnInit {
   allpolls: any;
   displayedColumns: string[] = ['title', 'options'];
-  dataSource: any;
 
   constructor(private callserviceService: CallserviceService, private dialog: MatDialog, private cdr: ChangeDetectorRef
     , private tostr: ToastrService) { }
@@ -72,23 +70,12 @@ export class ListallpollsComponent implements OnInit {
       this.tostr.success("Delete option successfully")
       this.allPollsList();
     })
+  }
 
-  }
-isAdmin:boolean=false;
-  ngDoCheck():void{
+  isAdmin: boolean = true;
+  ngDoCheck(): void {
     console.log("456789", this.callserviceService.decodeAccessToken())
-    const accessToken = localStorage.getItem('accessToken');
-    if (accessToken) {
-      const decodedToken: any = jwt_decode(accessToken);
-      const role = decodedToken.role;
-    
-      if (role === "admin") {
-        this.isAdmin = true;
-      } else {
-        this.isAdmin = false;
-      }
-    } else {
-      this.isAdmin = false;
-    }
-    }
+    const role = this.callserviceService.decodeAccessToken();
+    this.isAdmin = role === 'admin';
   }
+}

@@ -37,8 +37,6 @@ export class UpdatepollComponent implements OnInit {
 
       console.log("responce", res)
       this.tostr.success("Updated title successfully")
-
-
     })
     this.dialogRef.close();
     // this.cdr.detectChanges();
