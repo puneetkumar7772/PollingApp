@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
+import jwt_decode from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root'
@@ -24,16 +25,12 @@ export class CallserviceService {
   }
 
   addNewPoll(data: any): Observable<any> {
-
     return this.http.get<any>(`http://65.108.77.50:3031/add_poll?title=${data.title}&options=${data.opt_1}____${data.opt_2}____${data.opt_3}____${data.opt_4}`)
-
   }
 
   getallpolls(): Observable<any> {
     console.log('5')
     return this.http.get<any>(`http://65.108.77.50:3031/list_polls`)
-
-
   }
 
   updatePollTitle(id: any, newtitle: any): Observable<any> {
@@ -45,16 +42,23 @@ export class CallserviceService {
     return this.http.delete<any>(`http://65.108.77.50:3031/delete_poll?id=${id}`)
   }
 
-addNewOption(id:any,addnewopt:any):Observable<any>{
-    console.log('responce',id)
+  addNewOption(id: any, addnewopt: any): Observable<any> {
+    console.log('responce', id)
     return this.http.get<any>(`http://65.108.77.50:3031/add_new_option?id=${id}&option_text=${addnewopt.newoptionss}`)
   }
 
-  deleteOpt( id:any,option:any):Observable<any>{
+  deleteOpt(id: any, option: any): Observable<any> {
     console.log(10)
     return this.http.delete<any>(`http://65.108.77.50:3031/delete_poll_option?id=${id}&option_text=${option}`)
   }
 
+  decodeAccessToken() {
+    const accessToken = localStorage.getItem('accessToken');
+    if (accessToken) {
+      const decodedToken: any = jwt_decode(accessToken);
+      return decodedToken.role;
+    }
+  }
 
 }
 

@@ -43,7 +43,6 @@ export class LoginComponent {
             // Save the access token in localStorage
             localStorage.setItem('accessToken', accessToken);
             console.log(accessToken)
-            const accessTokenrole = localStorage.getItem('accessToken');
             if (accessToken) {
               const decodedToken: any = jwt_decode(accessToken);
               console.log("decodedToken", decodedToken);
