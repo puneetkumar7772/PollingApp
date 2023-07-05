@@ -9,15 +9,15 @@
         <div class="first"><mat-radio-button class="radio" style="width: 50px;">{{ option.option }} </mat-radio-button>
           <div>
             <button class="btn btn1 btn-primary" (click)=" deleteOption(poll._id,option.option)"
-              type="submit" *ngIf="isadmin">delete</button>
+              type="submit" *ngIf="isAdmin">delete</button>
           </div>
         </div>
 
       </ul>
       <div class="but">
-        <button *ngIf="isadmin"(click)=" updatePollTitleSet(poll._id,poll.title)" class="btn  btn-primary">Edit Title</button>
-        <button *ngIf="isadmin" (click)=" deletePoll(poll._id)" class="btn  btn-primary">Delete POll</button>
-        <button *ngIf="isadmin" (click)=" addoptions(poll._id)" class="btn  btn-primary">Add option</button>
+        <button *ngIf="isAdmin"(click)=" updatePollTitleSet(poll._id,poll.title)" class="btn  btn-primary">Edit Title</button>
+        <button *ngIf="isAdmin" (click)=" deletePoll(poll._id)" class="btn  btn-primary">Delete POll</button>
+        <button *ngIf="isAdmin" (click)=" addoptions(poll._id)" class="btn  btn-primary">Add option</button>
       </div>
     </div>
   </div>

@@ -74,21 +74,21 @@ export class ListallpollsComponent implements OnInit {
     })
 
   }
-isadmin:boolean=false;
+isAdmin:boolean=false;
   ngDoCheck():void{
-
+    console.log("456789", this.callserviceService.decodeAccessToken())
     const accessToken = localStorage.getItem('accessToken');
     if (accessToken) {
       const decodedToken: any = jwt_decode(accessToken);
       const role = decodedToken.role;
     
       if (role === "admin") {
-        this.isadmin = true;
+        this.isAdmin = true;
       } else {
-        this.isadmin = false;
+        this.isAdmin = false;
       }
     } else {
-      this.isadmin = false;
+      this.isAdmin = false;
     }
     }
-}
+  }

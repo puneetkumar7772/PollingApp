@@ -1,4 +1,4 @@
-import { Component,  } from '@angular/core';
+import { Component } from '@angular/core';
 import { AddpollComponent } from '../addpoll/addpoll.component';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
@@ -10,10 +10,10 @@ import jwt_decode from 'jwt-decode';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent  {
+export class HomeComponent {
   constructor(private dialog: MatDialog, private router: Router) { }
 
-  isadmin: boolean = false;
+  isAdmin: boolean = false;
 
   addNewPoll() {
     this.dialog.open(AddpollComponent, {
@@ -22,28 +22,25 @@ export class HomeComponent  {
       width: '50%'
     })
   }
-  ngDoCheck(): void {
 
+  ngDoCheck(): void {
     const accessToken = localStorage.getItem('accessToken');
     if (accessToken) {
       const decodedToken: any = jwt_decode(accessToken);
       const role = decodedToken.role;
-
       if (role === "admin") {
-        this.isadmin = true;
+        this.isAdmin = true;
       } else {
-        this.isadmin = false;
+        this.isAdmin = false;
       }
     } else {
-      this.isadmin = false;
+      this.isAdmin = false;
     }
   }
-  
 
   logout() {
     localStorage.clear();
     this.router.navigate(['login'])
-
   }
 
 }
